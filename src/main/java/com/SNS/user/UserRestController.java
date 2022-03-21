@@ -18,7 +18,7 @@ public class UserRestController {
 
 	@Autowired
 	private UserBO userBO;
-	@RequestMapping("is_duplication_id")
+	@RequestMapping("/is_duplication_id")
 	public Map<String, Boolean> isDuplicatedId(
 			@RequestParam("userId") String userId) {
 		
@@ -29,7 +29,7 @@ public class UserRestController {
 		return result;
 	}
 	
-	@PostMapping("sign_up")
+	@PostMapping("/sign_up")
 	public Map<String, Object> signUp(
 			@RequestParam("userId") String userId,
 			@RequestParam("passwored") String password,
