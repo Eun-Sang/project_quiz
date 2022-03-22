@@ -12,8 +12,16 @@
 		<label>Password</label>
 		<br>
 		<input type="password" id="password" name="password">
+		<br>
 		<input type="submit" class="btn btn-primary" value="로그인">
+		<br>
 		<button type="button" class="btn-dark">가입하기</button>
 	</form>
 	</div>
 </div>
+
+<script>
+$(document).ready(function() {
+	
+});
+</script>
