@@ -12,10 +12,25 @@
  			`userId` = #{userId}
  	</select>
  	
+ 	<select id="selectUserByLoginIdAndPassword" resultType="com.SNS.user.model.User" parameterType="map">
+ 		SELECT
+ 			`id`
+			,`loginId`
+			,`password`
+			,`name`
+			,`email`
+			,`createdAt`
+			,`updatedAt`
+		FROM
+			`user`
+		WHERE
+			`userId = #{userId}`
+			AND `password` = #{password}
+ 	</select>
+ 	
  	<insert id="insertUser" parameterType="map">
  		INSERT INTO `user`
  		(
-
 			`loginId`
 			,`password`
 			,`name`

@@ -10,10 +10,11 @@
 			<input type="text" id="userId" name="userId" placeholder="ID를 입력 해 주세요." class="col-3">
 			<button type="button" class="btn btn-primary ml-3" id="nameCheckBtn">중복확인</button>
 			</div>
-			<br>
+			<div>
 			<div id="idCheckLength" class="small text-danger d-none">ID를 4자 이상 입력 해 주세요.</div>
 			<div id="idCheckDuplicated" class="small text-danger d-none">이미 사용 중인 ID입니다.</div>
 			<div id="idCheckOk" class="small text-danger d-none">사용 가능한 ID입니다.</div>
+			</div>
 			<label>Password</label>
 			<br>
 			<input type="password" id="password" name="password" class="col-2">
@@ -43,24 +44,23 @@ $(document).ready(function() {
 		let userId = $('#userId').val().trim();
 		
 		//nameStatus 초기화
-		$('#idCheckLength').addclass('d-none');
-		$('#idCheckDuplicated').addclass('d-none');
-		$('#idCheckOk').addclass('d-none');
-		
-		
+		$('#idCheckLength').addClass('d-none');
+		$('#idCheckDuplicated').addClass('d-none');
+		$('#idCheckOk').addClass('d-none');
+
 		if (userId.length < 4) {
-			$('#idCheckLength').removeclass('d-none');
+			$('#idCheckLength').removeClass('d-none');
 			return;
 		}
 		
 		$.ajax({
-			url:"/user/is_duplication_id"
+			url:"/user/is_duplicated_id"
 			, data: {"userId" : userId}
 			, success: function(data) {
 				if (data.result) {
-					$('#idCheckDuplicated').removeclass('d-none');
+					$('#idCheckDuplicated').removeClass('d-none');
 				} else {
-					$('#idCheckOk').removeclass('d-none');
+					$('#idCheckOk').removeClass('d-none');
 				}
 			}
 			, error: function(e) {
@@ -112,7 +112,6 @@ $(document).ready(function() {
 		// 서버에 보내기
 		let url = $('#signUpForm').attr('action');
 		let params = $('#signUpForm').serialize();
-		//consol.log(params);
 		
 		$.post(url, params)
 		.done(function(data) {

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.SNS.user.dao.UserDAO;
+import com.SNS.user.model.User;
 
 @Service
 public class UserBO {
@@ -12,6 +13,10 @@ public class UserBO {
 	private UserDAO userDAO;
 	public boolean existUserByLoginId(String userId) {
 		return userDAO.existUserByLoginId(userId);
+	}
+	
+	public User getUserByLoginIdAndPassword(String userId, String password) {
+		return userDAO.selectUserByLoginIdAndPassword(userId, password);
 	}
 	
 	public int addUser(String userId, String password, String name, String email) {
