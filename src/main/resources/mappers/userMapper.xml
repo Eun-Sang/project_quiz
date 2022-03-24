@@ -9,7 +9,7 @@
  		FROM
  			`user`
  		WHERE
- 			`userId` = #{userId}
+ 			`loginId` = #{userId}
  	</select>
  	
  	<select id="selectUserByLoginIdAndPassword" resultType="com.SNS.user.model.User" parameterType="map">
@@ -40,10 +40,10 @@
  		)
  		VALUES
  		(
- 			#(loginId)
- 			,#(password)
- 			,#(name)
- 			,#(email)
+ 			#(userId)
+ 			, #(password)
+ 			, #(name)
+ 			, #(email)
  			, NOW()
  			, NOW()
  		)

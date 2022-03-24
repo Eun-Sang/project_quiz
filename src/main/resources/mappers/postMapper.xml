@@ -6,7 +6,7 @@
  	<select id="selectPostList" resultType="com.SNS.post.model.Post">
  		SELECT
 	 		`id`
-			,`userId`
+			,`loginId`
 			,`content`
 			,`imagePath`
 			,`createdAt`
@@ -14,7 +14,7 @@
 		FROM
 			`post`
 		WHERE
-			`id`= #{id} 	
+			`id`= #{userId} 	
  	</select>
  
  </mapper>

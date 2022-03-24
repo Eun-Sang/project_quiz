@@ -34,4 +34,14 @@
     		$('#fileName').text(fileName);
     	});
     });
+    
+ // 댓글 쓰기
+	$('.comment').on('click', function() {
+		let postId = $(this).data('post-id');
+		alert(postId);
+		
+		let commentContent = $('#comment' + postId).val().trim();
+		// let commentContent = $(this).siblings('input').val().trim();
+	});
+
     </script>

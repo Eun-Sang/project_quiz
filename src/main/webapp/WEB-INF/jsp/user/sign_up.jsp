@@ -104,7 +104,7 @@ $(document).ready(function() {
 		}
 		
 		// 아이디 중복확인 체크
-		if ($('#idCheckOk').hasclass('d-none')) {
+		if ($('#idCheckOk').hasClass('d-none')) {
 			alert("ID 중복확인을 다시 해 주세요.");
 			return;
 		}
@@ -113,9 +113,11 @@ $(document).ready(function() {
 		let url = $('#signUpForm').attr('action');
 		let params = $('#signUpForm').serialize();
 		
+		//console.log(params);
+		
 		$.post(url, params)
 		.done(function(data) {
-			if (data.result == 'success') {
+			if (data.result == "success") {
 				alert("회원가입을 환영합니다. 로그인을 해 주세요.");
 				location.href = "/user/sign_up_view";
 			} else {

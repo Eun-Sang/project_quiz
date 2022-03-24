@@ -22,6 +22,7 @@ public class UserRestController {
 
 	@Autowired
 	private UserBO userBO;
+	
 	@RequestMapping("/is_duplicated_id")
 	public Map<String, Boolean> isDuplicatedId(
 			@RequestParam("userId") String userId) {
