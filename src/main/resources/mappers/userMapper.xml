@@ -44,8 +44,8 @@
  			, #(password)
  			, #(name)
  			, #(email)
- 			, NOW()
- 			, NOW()
+ 			, NOW{}
+ 			, NOW{}
  		)
  	</insert>
  </mapper>

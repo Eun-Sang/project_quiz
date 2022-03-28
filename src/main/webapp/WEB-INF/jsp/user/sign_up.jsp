@@ -29,7 +29,7 @@
 			<br>
 			<label>이메일</label>
 			<br>
-			<input type="text" id="email" nema="email" placeholder="이메일을 입력 해 주세요" class="col-4">
+			<input type="text" id="email" name="email" placeholder="이메일을 입력 해 주세요" class="col-4">
 			<br>
 		<button type="button" class="btn btn-primary mt-3" id="signUpBtn">가입하기</button>
 	</form>
@@ -113,13 +113,14 @@ $(document).ready(function() {
 		let url = $('#signUpForm').attr('action');
 		let params = $('#signUpForm').serialize();
 		
+		//console.log(url);
 		//console.log(params);
 		
 		$.post(url, params)
 		.done(function(data) {
 			if (data.result == "success") {
 				alert("회원가입을 환영합니다. 로그인을 해 주세요.");
-				location.href = "/user/sign_up_view";
+				location.href = "/user/sign_in_view";
 			} else {
 				alert("가입에 실패 했습니다. 다시 시도 해 주세요.");
 			}
