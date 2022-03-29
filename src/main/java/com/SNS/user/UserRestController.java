@@ -34,10 +34,10 @@ public class UserRestController {
 		return result;
 	}
 	
-	@PostMapping("/sign_up")
+	@RequestMapping("/sign_up")
 	public Map<String, Object> signUp(
 			@RequestParam("userId") String userId,
-			@RequestParam("passwored") String password,
+			@RequestParam("password") String password,
 			@RequestParam("name") String name,
 			@RequestParam("email") String email) {
 		
@@ -45,7 +45,7 @@ public class UserRestController {
 		String encryptPassword = EncryptUtils.md5(password);
 		
 		// DB insert
-		int row = userBO.addUser(userId, encryptPassword, name, email);
+		int row = userBO.insertUser(userId, encryptPassword, name, email);
 		
 		// response
 		Map<String, Object> result = new HashMap<>();
@@ -53,6 +53,8 @@ public class UserRestController {
 		
 		if (row < 1) {
 			result.put("result", "error");
+		} else {
+			result.put("result", "입력실패");
 		}
 		return result;
 	}

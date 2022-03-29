@@ -15,6 +15,7 @@ public class TimelineBO {
 
 	@Autowired
 	private PostBO postBO;
+	
 	public List<CardView> generateCardViewList() {
 		List<CardView> cardViewList = new ArrayList<>();
 		

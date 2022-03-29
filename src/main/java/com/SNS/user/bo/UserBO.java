@@ -19,7 +19,7 @@ public class UserBO {
 		return userDAO.selectUserByLoginIdAndPassword(userId, password);
 	}
 	
-	public int addUser(String userId, String password, String name, String email) {
+	public int insertUser(String userId, String password, String name, String email) {
 		return userDAO.insertUser(userId, password, name, email);
 	}
 }
