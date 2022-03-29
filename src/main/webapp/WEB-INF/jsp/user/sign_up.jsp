@@ -3,11 +3,11 @@
 
 <div class="container">
 <h1>회원 가입</h1>
-	<div class="sign-up-box">
+	<div class="sign-up-box bg-light d-flex justify-content-center">
 		<form id="signUpForm" method="post" action="/user/sign_up">
 			<div>ID</div>
 			<div class="d-flex">
-			<input type="text" id="userId" name="userId" placeholder="ID를 입력 해 주세요." class="form-control col-3">
+			<input type="text" id="userId" name="userId" placeholder="ID를 입력 해 주세요." class="form-control">
 			<button type="button" class="btn btn-primary ml-3" id="nameCheckBtn">중복확인</button>
 			</div>
 			<div>
@@ -15,15 +15,15 @@
 			<div id="idCheckDuplicated" class="small text-danger d-none">이미 사용 중인 ID입니다.</div>
 			<div id="idCheckOk" class="small text-danger d-none">사용 가능한 ID입니다.</div>
 			</div>
-			<div>Password</div>
-			<input type="password" id="password" name="password" class="col-2">
-			<div>Confirm Password</div>
-			<input type="password" id="confirmPassword" name="confirmPassword" class="form-control col-2">
-			<div>이름</div>
-			<input type="text" id="name" name="name" placeholder="이름을 입력 해 주세요" class="form-control col-4">
-			<div>이메일</div>
-			<input type="text" id="email" name="email" placeholder="이메일을 입력 해 주세요" class="form-control col-4">
-			<br>
+			<div class="mt-2">Password</div>
+			<input type="password" id="password" name="password" class="form-control">
+			<div class="mt-2">Confirm Password</div>
+			<input type="password" id="confirmPassword" name="confirmPassword" class="form-control">
+			<div class="mt-2">이름</div>
+			<input type="text" id="name" name="name" placeholder="이름을 입력 해 주세요" class="form-control">
+			<div class="mt-2">이메일</div>
+			<input type="text" id="email" name="email" placeholder="이메일을 입력 해 주세요" class="form-control">
+			
 		<button type="button" class="btn btn-primary mt-3" id="signUpBtn">가입하기</button>
 	</form>
 	</div>
@@ -70,8 +70,8 @@ $(document).ready(function() {
 			return;
 		}
 		
-		let password = $('#password').val().trim();
-		let confirmPassword = $('#confirmPassword').val().trim();
+		let password = $('#password').val();
+		let confirmPassword = $('#confirmPassword').val();
 		if (password == '' || confirmPassword == '') {
 			alert("비밀번호를 입력 해 주세요");
 			return;

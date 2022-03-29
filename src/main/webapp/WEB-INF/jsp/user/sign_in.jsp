@@ -5,12 +5,9 @@
 	<h1>로그인</h1>
 	<div class="sign-in-box bg-light d-flex justify-content-center align-items-center">
 	<form id="signinForm" method="post" action="/user/sign_in">
-		<label>ID</label>
-		<br>
+		<div>ID</div>
 		<input type="text" id="userId" name="userId" placeholder="ID">
-		<br>
-		<label>Password</label>
-		<br>
+		<div>Password</div>
 		<input type="password" id="password" name="password" placeholder="●●●●">
 		<br>
 		<input type="submit" class="btn btn-primary mt-3" value="로그인">
