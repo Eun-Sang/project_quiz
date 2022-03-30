@@ -20,12 +20,12 @@ public class TimelineBO {
 		List<CardView> cardViewList = new ArrayList<>();
 		
 		// 글 list를 가져온다.
-		List<Post> postList = postBO.getPostList();
-		for (Post post : postList) {
+		//List<Post> postList = postBO.getPostListByUserId();
+		//for (Post post : postList) {
 			// 글 정보
 			
 			// 댓글들 정보
-		}
+		//}
 		return cardViewList;
 	}
 }

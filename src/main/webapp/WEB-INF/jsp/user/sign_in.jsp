@@ -40,10 +40,11 @@ $(document).ready(function() {
 		//console.log("url" + url);
 		//console.log("params" + params);
 		
-		$.post(usl.params)
+		$.post(url,params)
 		.done(function(data)) {
 			if (data.result == "success") {
-				location.href = "/post/post_list_view";
+				//로그인 성공
+				location.href="/post/post_list_view";
 			} else {
 				alert(data.error_message);
 			}

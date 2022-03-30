@@ -24,7 +24,7 @@
 		FROM
 			`user`
 		WHERE
-			`userId = #{userId}`
+			`loginId` = #{userId}
 			AND `password` = #{password}
  	</select>
  	
@@ -40,10 +40,10 @@
  		)
  		VALUES
  		(
- 			#(userId)
- 			, #(password)
- 			, #(name)
- 			, #(email)
+ 			#{userId}
+ 			, #{password}
+ 			, #{name}
+ 			, #{email}
  			, NOW()
  			, NOW()
  		)

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <div class="container">
-<h1>회원 가입</h1>
+<h1><span class="font-weight-bold">회원 가입</span></h1>
 	<div class="sign-up-box bg-light d-flex justify-content-center">
 		<form id="signUpForm" method="post" action="/user/sign_up">
 			<div>ID</div>
