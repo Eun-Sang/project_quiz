@@ -34,7 +34,7 @@ public class PostController {
 		model.addAttribute("postList", postList);
 		model.addAttribute("viewName", "post/post_list");
 		
-		return "test/quiz";
+		return "template/layout";
 	}
 	@RequestMapping("/post_create_view")
 	public String postCreateView(Model model) {
